@@ -16,6 +16,8 @@ const loader = new TextureLoader()
 
 export default class extends dom3D {
   init() {
+    this.inertia = .2;
+
     super.init();
     
     this.geometry = geometry;
@@ -44,9 +46,9 @@ export default class extends dom3D {
   onRaf({ delta }) {
     super.onRaf()
     
-    if (this.bounds.top + this.bounds.height > scroll.y && this.bounds.top < scroll.y + viewport.height) {
-      this.speed = lerp(this.speed, scroll.speed, 0.1);
-      this.material.uniforms.uTime.value += delta * 0.1;
+    if (this.bounds.top + this.bounds.height > scroll.easeY && this.bounds.top < scroll.easeY + viewport.height) {
+      this.speed = lerp(this.speed, scroll.speed, this.inertia);
+      this.material.uniforms.uTime.value += delta * this.inertia;
       this.material.uniforms.uSpeed.value = this.speed;
     }
   }

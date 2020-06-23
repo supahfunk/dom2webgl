@@ -18,7 +18,7 @@ export default class extends component(Object3D) {
 
     this.bounds = {
       left: rect.left,
-      top: rect.top,
+      top: rect.top + scroll.easeY,
       width: rect.width,
       height: rect.height,
     };
@@ -66,7 +66,7 @@ export default class extends component(Object3D) {
   }
 
   onRaf() {
-    this.updatePosition(scroll.y);
+    this.updatePosition(scroll.easeY);
   }
 
   destroy() {
