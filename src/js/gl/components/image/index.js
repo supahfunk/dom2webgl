@@ -51,6 +51,9 @@ export default class extends dom3D {
       this.material.uniforms.uTime.value += delta * this.inertia;
       this.material.uniforms.uSpeed.value = this.speed;
     }
+
+    this.rotation.z = scroll.speed * 0.001
+    this.mesh.scale.y = 1 + scroll.speed * 0.001
   }
 
 }
