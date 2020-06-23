@@ -68,11 +68,6 @@ export default class extends component(Object3D) {
   onRaf() {
     this.updatePosition(scroll.y);
   }
-  
-  onLoadEnded() {
-    this.updateSize()
-    this.updatePosition(scroll.y);
-  }
 
   destroy() {
     this.parent && this.parent.remove(this);

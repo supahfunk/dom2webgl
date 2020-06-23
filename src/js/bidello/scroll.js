@@ -10,6 +10,9 @@ class Scroll extends component() {
     this.onScroll = this.onScroll.bind(this);
 
     window.addEventListener('scroll', this.onScroll)
+    window.addEventListener('beforeunload', () => {
+      window.scrollTo(0,0);
+    })
   }
 
   onScroll() {

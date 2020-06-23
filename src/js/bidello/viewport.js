@@ -38,6 +38,7 @@ class Viewport {
   }
 
   onLoadEnded() {
+    this.onResize()
     bidello.trigger(
       { name: 'loadEnded' },
     )

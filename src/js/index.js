@@ -24,10 +24,6 @@ class Site extends component() {
   onRaf() {
     renderer.render(scene, camera);
   }
-
-  onLoadEnd() {
-    console.log("finished loader!");
-  }
 }
 
 new Site();
