@@ -45,8 +45,8 @@ class Pointer {
   }
 
   convertEvent(e) {
-    e.preventDefault();
-    e.stopPropagation();
+    // e.preventDefault();
+    // e.stopPropagation();
 
     const t = {
       x: 0,
